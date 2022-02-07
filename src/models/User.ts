@@ -1,4 +1,6 @@
+import axios, { AxiosResponse } from 'axios';
 interface UserProps {
+  id?: number;
   name?: string;
   age?: number;
 }
@@ -33,5 +35,13 @@ export class User {
     handlers.forEach((callback) => {
       callback();
     });
+  }
+
+  async fetch(): Promise<void> {
+    const response = await axios.get(
+      `http://localhost:8007/users/${this.get('id')}`
+    );
+
+    this.set(response.data);
   }
 }

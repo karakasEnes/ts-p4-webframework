@@ -1,9 +1,9 @@
 import { User } from './models/User';
 
-const user = new User({ name: 'stephen', age: 30 });
+const user = new User({ id: 1 });
 
-user.on('change', () => {});
-user.on('change', () => {});
-user.on('dsfsadf', () => {});
+user.fetch();
 
-console.log(user);
+setTimeout(() => {
+  console.log(user);
+}, 3000);
