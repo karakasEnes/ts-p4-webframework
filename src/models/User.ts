@@ -44,4 +44,14 @@ export class User {
 
     this.set(response.data);
   }
+
+  save(): void {
+    const id = this.get('id');
+
+    if (id) {
+      axios.put(`http://localhost:8007/users/${id}`, this.data);
+    } else {
+      axios.post(`http://localhost:8007/users`, this.data);
+    }
+  }
 }
