@@ -2,11 +2,8 @@ import { User } from './models/User';
 
 const user = new User({ name: 'stephen', age: 30 });
 
-user.set({ name: 'enes' });
+user.on('change', () => {});
+user.on('change', () => {});
+user.on('dsfsadf', () => {});
 
-user.get('name');
-
-user.set({ name: 'luna', age: 21 });
-
-user.get('name');
-user.get('age');
+console.log(user);
