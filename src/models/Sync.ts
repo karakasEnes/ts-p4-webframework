@@ -1,7 +1,7 @@
 import axios, { AxiosResponse } from 'axios';
 
 interface hasId {
-  id: number;
+  id?: number;
 }
 
 //http://localhost:8007/users
